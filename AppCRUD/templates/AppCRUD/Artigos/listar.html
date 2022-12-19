@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artigos</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'AppCRUD/css/style.css' %}">
+</head>
+
+<body>
+    <div class="content-read">
+        <h1>Listando artigos</h1>
+        <table>
+            <tr>
+                <th>Autor</th>
+                <th>Linguagem</th>
+                <th>Edição</th>
+                <th>Titulo</th>
+                <th>Introdução</th>
+            </tr>
+
+            {% for artigo in artigos %}
+            <tr>
+                <td>{{ artigo.autor_id }}</td>
+                <td>{{ artigo.linguagem }}</td>
+                <td>{{ artigo.eicao }}</td>
+                <td>{{ artigo.titulo }}</td>
+                <td>{{ artigo.introducao }}</td>
+                <td><a href="{% url 'url_editar_artigo' artigo.id %}">Editar</a></td>
+                <td><a href="{% url 'url_excluir_artigo' artigo.id %}">Exluir</a></td>
+            </tr>
+            {% endfor %}
+
+        </table>
+        <a class='links' href="{% url 'url_criar_artigo' %}">Criar novo artigo</a>
+        <a class='links' href="{% url 'url_index' %}">Voltar</a>
+    </div>
+
+</body>
+
+</html>

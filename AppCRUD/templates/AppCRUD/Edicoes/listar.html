@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artigos</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'AppCRUD/css/style.css' %}">
+</head>
+
+<body>
+    <div class="content-read">
+        <h1>Listando artigos</h1>
+        <table>
+            <tr>
+                <th>Número</th>
+                <th>Editorial</th>
+                <th>Data</th>
+            </tr>
+
+            {% for edicao in edicoes %}
+            <tr>
+                <td>{{ edicao.numero }}</td>
+                <td>{{ edicao.editorial }}</td>
+                <td>{{ edicao.data }}</td>
+                <td><a href="{% url 'url_editar_edicao' edicao.numero %}">Editar</a></td>
+                <td><a href="{% url 'url_excluir_edicao' edicao.numero %}">Excluir</a></td>
+            </tr>
+            {% endfor %}
+
+        </table>
+        <a class='links' href="{% url 'url_criar_edicao' %}">Criar nova edição</a>
+        <a class='links' href="{% url 'url_index' %}">Voltar</a>
+    </div>
+
+</body>
+
+</html>

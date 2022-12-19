@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artigos</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'AppCRUD/css/style.css' %}">
+</head>
+
+<body>
+    <div class="content-read">
+        <h1>Listando linguagens</h1>
+        <table>
+            <tr>
+                <th>Nome</th>
+            </tr>
+
+            {% for linguagem in linguagens %}
+            <tr>
+                <td>{{ linguagem.nome }}</td>
+                <td><a href="{% url 'url_editar_linguagem' linguagem.id %}">Editar</a></td>
+                <td><a href="{% url 'url_excluir_linguagem' linguagem.id %}">Excluir</a></td>
+            </tr>
+            {% endfor %}
+
+        </table>
+        <a class='links' href="{% url 'url_criar_linguagem' %}">Adicionar nova linguagem</a>
+        <a class='links' href="{% url 'url_index' %}">Voltar</a>
+    </div>
+
+</body>
+
+</html>

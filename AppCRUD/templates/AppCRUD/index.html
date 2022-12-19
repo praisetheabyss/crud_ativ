@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'AppCRUD/css/style.css' %}">
+</head>
+
+<body>
+    <div class="index-read">
+        <h1>Atividade CRUD</h1>
+        <h2>Tabelas</h2>
+        <table>
+            <tr>
+                <th>Autores</th>
+                <th>Artigos</th>
+                <th>Edições</th>
+                <th>Linguagens</th>
+            </tr>
+            <tr>
+                <td><a href="{% url 'url_listar_autores' %}">Lista de autores</a></td>
+                <td><a href="{% url 'url_listar_artigos' %}">Lista de artigos</a></td>
+                </td>
+                <td><a href="{% url 'url_listar_edicoes' %}">Lista de edições</a></td>
+                </td>
+                <td><a href="{% url 'url_listar_linguagens' %}">Lista de Linguagens</a></td>
+                </td>
+            </tr>
+            <tr>
+                <td><a href="{% url 'url_criar_autor' %}">Criar autor</a></td>
+                <td><a href="{% url 'url_criar_artigo' %}">Criar artigo</a></td>
+                <td><a href="{% url 'url_criar_edicao' %}">Criar edição</a></td>
+                <td><a href="{% url 'url_criar_linguagem' %}">Criar linguagem</a></td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+
+</html>

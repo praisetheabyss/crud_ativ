@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autores</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'AppCRUD/css/style.css' %}">
+</head>
+
+<body>
+    <div class="content-read">
+        <h1>Listando autores</h1>
+        <table>
+            <tr>
+                <th>Nome</th>
+                <th>Biografia</th>
+                <th>Email</th>
+            </tr>
+
+            {% for autor in autores %}
+            <tr>
+                <td>{{ autor.nome }}</td>
+                <td>{{ autor.biografia }}</td>
+                <td>{{ autor.email }}</td>
+                <td><a href="{% url 'url_editar_autor' autor.id %}">Editar</a></td>
+                <td><a href="{% url 'url_deletar_autor' autor.id %}">Excluir</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a class='links' href="{% url 'url_criar_autor' %}">Criar um novo autor</a>
+        <a class='links' href="{% url 'url_index' %}">Voltar</a>
+    </div>
+
+
+</body>
+
+</html>
