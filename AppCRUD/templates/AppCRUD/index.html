@@ -7,36 +7,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'AppCRUD/css/style.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
 </head>
 
 <body>
-    <div class="index-read">
-        <h1>Atividade CRUD</h1>
-        <h2>Tabelas</h2>
-        <table>
-            <tr>
-                <th>Autores</th>
-                <th>Artigos</th>
-                <th>Edições</th>
-                <th>Linguagens</th>
+    <div class="m-5 p-5 d-flex flex-column align-items-center rounded-3">
+        <div class="d-flex flex-wrap gap-3 p-3 justify-content-center align-items-center border border-3 border-dark w-100">
+            <div class="ms-2 d-flex gap-3 align-items-center">
+                <h1>Atividade CRUD </h1>
+
+                <h2>Tabelas</h2>
+            </div>
+            
+        </div>
+        
+        <table class="mt-2">
+            <tr class="border border-2 bg-white">
+                <th class="border border-2">Autores</th>
+                <th class="border border-2">Artigos</th>
+                <th class="border border-2">Edições</th>
+                <th class="border border-2">Linguagens</th>
             </tr>
-            <tr>
-                <td><a href="{% url 'url_listar_autores' %}">Lista de autores</a></td>
-                <td><a href="{% url 'url_listar_artigos' %}">Lista de artigos</a></td>
+            <tr class="bg-light">
+                <td class="border border-2"><a href="{% url 'url_listar_autores' %}">Lista de autores</a></td>
+                <td class="border border-2"><a href="{% url 'url_listar_artigos' %}">Lista de artigos</a></td>
                 </td>
-                <td><a href="{% url 'url_listar_edicoes' %}">Lista de edições</a></td>
+                <td class="border border-2"><a href="{% url 'url_listar_edicoes' %}">Lista de edições</a></td>
                 </td>
-                <td><a href="{% url 'url_listar_linguagens' %}">Lista de Linguagens</a></td>
+                <td class="border border-2"><a href="{% url 'url_listar_linguagens' %}">Lista de Linguagens</a></td>
                 </td>
             </tr>
-            <tr>
-                <td><a href="{% url 'url_criar_autor' %}">Criar autor</a></td>
-                <td><a href="{% url 'url_criar_artigo' %}">Criar artigo</a></td>
-                <td><a href="{% url 'url_criar_edicao' %}">Criar edição</a></td>
-                <td><a href="{% url 'url_criar_linguagem' %}">Criar linguagem</a></td>
+            <tr class="bg-light">
+                <td class="border border-2"><a href="{% url 'url_criar_autor' %}">Criar autor</a></td>
+                <td class="border border-2"><a href="{% url 'url_criar_artigo' %}">Criar artigo</a></td>
+                <td class="border border-2"><a href="{% url 'url_criar_edicao' %}">Criar edição</a></td>
+                <td class="border border-2"><a href="{% url 'url_criar_linguagem' %}">Criar linguagem</a></td>
             </tr>
         </table>
+
     </div>
 
 </body>
